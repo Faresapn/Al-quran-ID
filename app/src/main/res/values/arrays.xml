@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arab_font_size_titles">
+        <item>18 sp</item>
+        <item>20 sp</item>
+        <item>24 sp</item>
+        <item>28 sp</item>
+        <item>30 sp</item>
+    </string-array>
+    <string-array name="arab_font_size_values">
+        <item>18</item>
+        <item>20</item>
+        <item>24</item>
+        <item>28</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="translation_font_size_titles">
+        <item>14 sp</item>
+        <item>16 sp</item>
+        <item>18 sp</item>
+        <item>20 sp</item>
+        <item>24 sp</item>
+    </string-array>
+    <string-array name="translation_font_size_values">
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>24</item>
+    </string-array>
+</resources>

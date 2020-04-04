@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/quran">
+
+    <TextView
+        android:id="@+id/tvAyat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/quran_num"
+        android:fontFamily="@font/heebo_bold"
+        android:gravity="center"
+        android:textColor="#92D5B8"
+        android:textSize="18sp"
+        tools:text="123" />
+
+    <ImageView
+        android:id="@+id/ivItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quran_item"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@id/tvAyat"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@id/tvAyat"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/tvHalf"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/quran_half"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/heebo_bold"
+        android:gravity="center"
+        android:text="1/2 Juz"
+        android:textColor="#92D5B8"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/tvNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:background="@drawable/quran_num"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/heebo_bold"
+        android:gravity="center"
+        android:text="Berikutnya"
+        android:textColor="#92D5B8"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/heebo_bold"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvQuran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAyat"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/lpmq_isepmisbah"
+        android:lineSpacingExtra="18sp"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        tools:text="AyatText" />
+
+    <TextView
+        android:id="@+id/tvTranslation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="16dp"
+        tools:text="Translation"
+        android:textSize="18sp"
+        android:layout_below="@id/tvQuran"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+</RelativeLayout>

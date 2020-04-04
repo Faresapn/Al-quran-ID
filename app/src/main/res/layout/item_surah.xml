@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvSurahId"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/bg_number"
+        android:gravity="center"
+        android:fontFamily="@font/heebo_bold"
+        android:textColor="#155354"
+        tools:text="123"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/tvSurah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/tvSurahId"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/heebo_bold"
+        android:textColor="#155354"
+        android:textSize="20sp"
+        tools:text="Surah"
+        android:layout_toRightOf="@id/tvSurahId"
+        android:layout_marginLeft="24dp" />
+
+</RelativeLayout>

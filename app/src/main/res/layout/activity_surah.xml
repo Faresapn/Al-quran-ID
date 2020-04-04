@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E8082">
+
+    <SearchView
+        android:id="@+id/svSurah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_search"
+        android:layout_margin="16dp"/>
+
+    <ListView
+        android:id="@+id/lvSurah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/avBanner"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/svSurah"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        tools:listitem="@layout/item_surah"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/avBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_id"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

@@ -30,6 +30,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -100,12 +101,9 @@ public class AdzanActivity extends AppCompatActivity {
         actvCity.setAdapter(cityAdapter);
         actvCity.setThreshold(1);
         actvCity.setOnItemClickListener((parent, view, position, id) -> {
-            /*String cityId = String.valueOf(id);
-            appPreference.setCityId(cityId);*/
             String city = cityAdapter.getItem(position);
             appPreference.setCity(city);
             actvCity.setText("");
-
             reloadData();
         });
         loadData();
@@ -131,10 +129,12 @@ public class AdzanActivity extends AppCompatActivity {
     private void reloadData() {
         String city = appPreference.getCityId();
         String cityName = appPreference.getCity();
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         Date date = Calendar.getInstance().getTime();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("YYYY-mm-dd");
         String formattedDate = format.format(date);
+
 
         ServiceGenerator.getApi(false).getJadwalShalat(cityName)
                 .enqueue(new Callback<ResponseAdzan>() {
@@ -169,8 +169,18 @@ public class AdzanActivity extends AppCompatActivity {
     }
 
     private void setData(Jadwal adzanModel) {
+        String currentDatee = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateformat = new SimpleDateFormat("hh:mm aa \nEE, dd-MMM-yyyy  ");
+        String datetime = dateformat.format(c.getTime());
+        Log.d("mydatek",datetime);
+        Log.e("mydateee",currentDatee );
+        String currentDate = new SimpleDateFormat("EE , dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        Log.d("mydatee",currentDate);
+        String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+        Log.d("mydate",mydate);
+        tvDate.setText(datetime);
         tvLocation.setText(appPreference.getCity());
-        tvDate.setText(adzanModel.getTanggal());
 
         tvSubuh.setText(adzanModel.getSubuh());
         tvDzuhur.setText(adzanModel.getDzuhur());

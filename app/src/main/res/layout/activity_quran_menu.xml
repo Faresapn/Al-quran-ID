@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:backgroundTint="@color/bg_murottal"
+    android:background="@android:color/white"
+    android:gravity="center"
     tools:context=".QuranMenuActivity">
 
     <Button
         android:id="@+id/btnSurah"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
+        android:layout_height="60dp"
         android:background="@drawable/bg_button"
         android:fontFamily="@font/heebo_bold"
         android:text="Surat"
         android:textAllCaps="false"
-        android:textColor="#A0DFBF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/bg_murottal"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnJuz"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_height="60dp"
         android:background="@drawable/bg_button"
         android:fontFamily="@font/heebo_bold"
         android:text="Juz"
+        android:layout_marginTop="10dp"
         android:textAllCaps="false"
         android:textColor="#A0DFBF"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        android:textSize="18sp"/>
+    <Button
+        android:id="@+id/btnMurottal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_button"
+        android:fontFamily="@font/heebo_bold"
+        android:text="Murottal"
+        android:textAllCaps="false"
+        android:textColor="#A0DFBF"
+        android:textSize="18sp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

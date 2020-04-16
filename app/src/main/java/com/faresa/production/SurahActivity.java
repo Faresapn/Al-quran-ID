@@ -41,7 +41,7 @@ public class SurahActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1E8082")));
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#89C8C7")));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Al-Qur'an");
             getSupportActionBar().setElevation(0);

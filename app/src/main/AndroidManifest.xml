@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.faresa.production.application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.faresa.production.kompas.Kompas"></activity>
+        <activity android:name=".MurottalActivity"></activity>
+        <activity android:name=".kompas.Kompas" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -32,7 +33,7 @@
             android:theme="@android:style/Theme.Translucent" />
 
         <receiver
-            android:name="com.faresa.production.receiver.BootReceiver"
+            android:name=".receiver.BootReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -40,40 +41,40 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.faresa.production.receiver.AlarmReceiver"
+            android:name=".receiver.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name="com.faresa.production.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.production.QuranMenuActivity"
+            android:name=".QuranMenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.production.JuzActivity"
+            android:name=".JuzActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.production.DailyActivity"
+            android:name=".DailyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.production.AdzanActivity"
+            android:name=".AdzanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.faresa.production.QuranActivity"
+            android:name=".QuranActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.production.SurahActivity"
+            android:name=".SurahActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.faresa.production.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.faresa.production.PreloadActivity"
+            android:name=".PreloadActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>

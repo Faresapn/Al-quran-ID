@@ -19,7 +19,7 @@ public class QuranMenuActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#89C8C7")));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Al-Qur'an");
             getSupportActionBar().setElevation(0);
@@ -36,7 +36,7 @@ public class QuranMenuActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick({R.id.btnJuz, R.id.btnSurah})
+    @OnClick({R.id.btnJuz, R.id.btnSurah,R.id.btnMurottal})
     public void onMenuClick(View v) {
         Intent intent = null;
         switch (v.getId()) {
@@ -45,6 +45,9 @@ public class QuranMenuActivity extends AppCompatActivity {
                 break;
             case R.id.btnSurah:
                 intent = new Intent(this, SurahActivity.class);
+                break;
+            case R.id.btnMurottal:
+                intent = new Intent(this,MurottalActivity.class);
                 break;
         }
         startActivity(intent);

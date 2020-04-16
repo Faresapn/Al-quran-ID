@@ -1,7 +1,10 @@
 package com.faresa.production.rest;
 
+import com.faresa.production.model.QuranMurottal;
 import com.faresa.production.model.city.ResponseCity;
 import com.faresa.production.model.muslimsalat.ResponseAdzan;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.Call;
@@ -23,4 +26,8 @@ public interface ApiService {
 
     @GET("{kota}/.json")
     Observable<ResponseAdzan> getShalat(@Path("kota") String kota);
+
+    @GET("data.json?print=pretty")
+    Call<List<QuranMurottal>> getDataQuran();
+
 }

@@ -4,182 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main"
+    android:background="@drawable/bg"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/ivMoon"
-        android:layout_width="160dp"
-        android:layout_height="190dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/moon"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp" />
+        app:srcCompat="@drawable/new_logo" />
 
     <ImageView
         android:id="@+id/ivBadge"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:srcCompat="@drawable/daily_badge"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLastRead"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/daily_badge" />
 
     <Button
         android:id="@+id/btnQuran"
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Alquran"
+        android:textColor="@color/text"
         android:layout_marginTop="8dp"
-        android:background="@drawable/btn_quran"
-        app:layout_constraintEnd_toStartOf="@+id/btnQiblat"
-        app:layout_constraintStart_toEndOf="@+id/btnAdzan"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <Button
-        android:id="@+id/btnQiblat"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="75dp"
-        android:background="@drawable/kiblat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDaily"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toEndOf="@+id/btnAdzan"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Al-Qur'an"
-        android:textColor="#05595A"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnQuran"
-        app:layout_constraintStart_toStartOf="@+id/btnQuran"
-        app:layout_constraintTop_toBottomOf="@+id/btnQuran" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Kiblat"
-        android:textColor="#05595A"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnQiblat"
-        app:layout_constraintStart_toStartOf="@+id/btnQiblat"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnQiblat" />
 
     <Button
-        android:id="@+id/btnAdzan"
-        android:layout_width="50dp"
+        android:id="@+id/btnQiblat"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="75dp"
-        android:background="@drawable/btn_sholat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/heebo_bold"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Kiblat"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDaily" />
+
+    <Button
+        android:id="@+id/btnAdzan"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
         android:text="Sholat"
-        android:textColor="#05595A"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnAdzan"
-        app:layout_constraintStart_toStartOf="@+id/btnAdzan"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdzan" />
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMoon" />
 
     <Button
         android:id="@+id/btnDaily"
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="75dp"
-        android:background="@drawable/btn_daily"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Target Harian"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdzan" />
 
     <Button
         android:id="@+id/btnSetting"
-        android:layout_width="50dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_button"
         android:layout_marginTop="8dp"
-        android:background="@drawable/btn_setting"
-        app:layout_constraintEnd_toStartOf="@+id/btnDaily"
-        app:layout_constraintStart_toEndOf="@+id/btnQiblat"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Pengaturan"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQuran" />
 
     <Button
         android:id="@+id/btnLastRead"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:background="@drawable/btn_mark"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_trakhir"
         android:fontFamily="@font/heebo_bold"
-        android:gravity="center_vertical"
-        android:paddingStart="4dp"
-        android:paddingLeft="4dp"
+
+        android:paddingLeft="10dp"
         android:text="Terakhir dibaca"
         android:textAlignment="gravity"
         android:textAllCaps="false"
-        android:textColor="#A0DFBF"
+        android:textColor="#ffF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivPerson"
-        app:layout_constraintVertical_bias="0.8" />
 
-    <ImageView
-        android:id="@+id/ivPerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:srcCompat="@drawable/person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Pengaturan"
-        android:textColor="#05595A"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnSetting"
-        app:layout_constraintStart_toStartOf="@+id/btnSetting"
-        app:layout_constraintTop_toBottomOf="@+id/btnSetting" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Target Harian"
-        android:textColor="#05595A"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnDaily"
-        app:layout_constraintStart_toStartOf="@+id/btnDaily"
-        app:layout_constraintTop_toBottomOf="@+id/btnDaily" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -187,5 +121,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/btnKami"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Tentang Kami"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSetting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

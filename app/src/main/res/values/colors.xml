@@ -6,4 +6,5 @@
 
     <color name="fastscroll_handle">@color/colorPrimary</color>
     <color name="bg_murottal">#89C8C7</color>
+    <color name="text">#3F8E92</color>
 </resources>

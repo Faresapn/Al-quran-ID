@@ -206,7 +206,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.QuranViewHol
         return models.get(position).getId();
     }
 
-    public class QuranViewHolder extends RecyclerView.ViewHolder {
+    public static class QuranViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tvQuran)
         TextView tvQuran;
         @BindView(R.id.tvTranslation)

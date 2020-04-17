@@ -76,10 +76,12 @@ public class MurottalAdapter extends RecyclerView.Adapter<MurottalAdapter.Murott
                             public void onClick(View v) {
                                 if (mediaPlayer.isPlaying()){
                                     mediaPlayer.stop();
+                                    holder.seekBar.setProgress(0);
                                     holder.stop.setVisibility(View.VISIBLE);
                                     holder.play.setVisibility(View.INVISIBLE);
                                 }else {
                                     mediaPlayer.start();
+                                    holder.seekBar.setProgress(0);
                                     holder.stop.setVisibility(View.INVISIBLE);
                                     holder.play.setVisibility(View.VISIBLE);
                                 }

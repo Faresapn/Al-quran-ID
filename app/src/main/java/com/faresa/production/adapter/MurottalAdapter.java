@@ -40,94 +40,67 @@ public class MurottalAdapter extends RecyclerView.Adapter<MurottalAdapter.Murott
         QuranMurottal quranMurottal = quranMurottals.get(position);
         holder.nomor.setText(quranMurottal.getNomor());
         holder.name.setText(quranMurottal.getNama());
-        holder.play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final MediaPlayer mediaPlayer = MediaPlayer.create(holder.itemView.getContext(),Uri.parse(quranMurottal.getAudio()));
-                mediaPlayer.start();
-                holder.stop.setVisibility(View.VISIBLE);
-                holder.play.setVisibility(View.INVISIBLE);
-                holder.stop.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (mediaPlayer.isPlaying()){
-                            mediaPlayer.stop();
-                            holder.seekBar.setProgress(0);
-                            holder.play.setVisibility(View.VISIBLE);
-                            holder.stop.setVisibility(View.INVISIBLE);
-                        }else {
-                            mediaPlayer.start();
-                            holder.stop.setVisibility(View.INVISIBLE);
-                            holder.play.setVisibility(View.VISIBLE);
+        holder.play.setOnClickListener(v -> {
+            final MediaPlayer mediaPlayer = MediaPlayer.create(holder.itemView.getContext(),Uri.parse(quranMurottal.getAudio()));
+            mediaPlayer.start();
+            holder.stop.setVisibility(View.VISIBLE);
+            holder.play.setVisibility(View.INVISIBLE);
+            holder.stop.setOnClickListener(v12 -> {
+                if (mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                    holder.play.setVisibility(View.VISIBLE);
+                    holder.stop.setVisibility(View.INVISIBLE);
+                }else {
+                    mediaPlayer.start();
+                    holder.stop.setVisibility(View.INVISIBLE);
+                    holder.play.setVisibility(View.VISIBLE);
 
-                        }
-                    }
-                });
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
+                }
+            });
+            mediaPlayer.setOnCompletionListener(mp -> {
+                holder.seekBar.setProgress(0);
+                holder.stop.setVisibility(View.INVISIBLE);
+                holder.play.setVisibility(View.VISIBLE);
+                holder.play.setOnClickListener(v1 -> {
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.stop();
+                        holder.stop.setVisibility(View.VISIBLE);
+                        holder.play.setVisibility(View.INVISIBLE);
+                    }else {
+                        mediaPlayer.start();
                         holder.seekBar.setProgress(0);
-                        mp.seekTo(0);
-                        mediaPlayer.seekTo(0);
                         holder.stop.setVisibility(View.INVISIBLE);
                         holder.play.setVisibility(View.VISIBLE);
-                        holder.play.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                if (mediaPlayer.isPlaying()){
-                                    mediaPlayer.stop();
-                                    holder.seekBar.setProgress(0);
-                                    holder.stop.setVisibility(View.VISIBLE);
-                                    holder.play.setVisibility(View.INVISIBLE);
-                                }else {
-                                    mediaPlayer.start();
-                                    holder.seekBar.setProgress(0);
-                                    holder.stop.setVisibility(View.INVISIBLE);
-                                    holder.play.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        });
                     }
                 });
-                holder.seekBar.setMax(mediaPlayer.getDuration());
-                Timer timer = new Timer();
-                timer.scheduleAtFixedRate(new TimerTask() {
-                    @Override
-                    public void run() {
-                        holder.seekBar.setProgress(mediaPlayer.getCurrentPosition());
+            });
+            holder.seekBar.setMax(mediaPlayer.getDuration());
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    holder.seekBar.setProgress(mediaPlayer.getCurrentPosition());
+                }
+            },0,1000);
+            holder.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    if (fromUser){
+                        mediaPlayer.seekTo(progress);
+                        holder.seekBar.setProgress(progress);
                     }
-                },0,1000);
-                holder.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                    @Override
-                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        if (fromUser){
-                            mediaPlayer.seekTo(progress);
-                            holder.seekBar.setProgress(progress * 100);
-                        }
-                    }
+                }
 
-                    @Override
-                    public void onStartTrackingTouch(SeekBar seekBar) {
-//                        if (mediaPlayer.isPlaying()){
-//                            mediaPlayer.stop();
-//                            holder.play.setVisibility(View.INVISIBLE);
-//                            holder.stop.setVisibility(View.VISIBLE);
-//                            seekBar.setProgress(0);
-//                        }else {
-//                            seekBar.setProgress(0);
-//                        }
-                    }
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
 
-                    @Override
-                    public void onStopTrackingTouch(SeekBar seekBar) {
-//                            holder.play.setVisibility(View.INVISIBLE);
-//                            holder.stop.setVisibility(View.VISIBLE);
-//                            mediaPlayer.stop();
+                }
 
-                    }
-                });
-            }
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
 
+                }
+            });
         });
     }
 

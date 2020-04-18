@@ -4,55 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E8082"
     android:orientation="vertical"
     tools:context=".QuranActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        app:titleTextColor="@android:color/white"
+        app:title="Al-Quran"
+        app:navigationIcon="@drawable/back"
+        android:background="@drawable/background_item_bacaan"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvNumber"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:visibility="gone"
+        android:visibility="invisible"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/bg_number"
-        android:fontFamily="@font/heebo_bold"
+        android:layout_marginEnd="109dp"
+        android:background="@drawable/background_nomor"
         android:gravity="center"
-        android:textColor="#155354"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tolbar"
         tools:text="123" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/heebo_bold"
+        android:layout_marginTop="8dp"
         android:padding="16dp"
+        android:visibility="invisible"
         android:paddingBottom="8dp"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/rvQuran"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tolbar"
         tools:text="Surah" />
 
     <com.l4digital.fastscroll.FastScrollRecyclerView
         android:id="@+id/rvQuran"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         app:handleColor="@color/fastscroll_handle"
-        app:layout_constraintBottom_toTopOf="@id/avBanner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/avBanner"
+        app:layout_constraintTop_toBottomOf="@+id/tolbar"
         tools:listitem="@layout/item_quran" />
 
     <com.google.android.gms.ads.AdView

@@ -1,14 +1,18 @@
 package com.faresa.production;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.preference.PreferenceManager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -151,12 +155,19 @@ public class QuranActivity extends AppCompatActivity {
         tvTitle.setText(title);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1E8082")));
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(title);
-            getSupportActionBar().setElevation(0);
+            getSupportActionBar().hide();
         }
 
+        Toolbar toolbar = findViewById(R.id.tolbar);
+        toolbar.setTitle(title);
+        toolbar.setNavigationIcon(R.drawable.back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),QuranMenuActivity.class));
+                finish();
+            }
+        });
         showBannerAd();
     }
 

@@ -15,7 +15,7 @@
         android:searchIcon="@drawable/ic_search_black_24dp"
         android:queryBackground="@drawable/bg_search"
         android:queryHint="Cari surah"
-        android:layout_margin="16dp"/>
+        android:layout_margin="10dp"/>
 
     <ListView
         android:id="@+id/lvSurah"

@@ -3,19 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/quran">
+    android:layout_marginTop="20dp"
+    android:background="@drawable/background_item_bacaan">
 
     <TextView
         android:id="@+id/tvAyat"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:background="@drawable/quran_num"
-        android:fontFamily="@font/heebo_bold"
+        android:textColor="@color/colorPrimary"
+        android:text="1"
         android:gravity="center"
-        android:textColor="#92D5B8"
-        android:textSize="18sp"
-        tools:text="123" />
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/background_nomor" />
 
     <ImageView
         android:id="@+id/ivItem"
@@ -26,6 +27,7 @@
         android:layout_alignStart="@id/tvAyat"
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@id/tvAyat"
+        android:visibility="invisible"
         android:layout_alignParentRight="true" />
 
     <TextView
@@ -41,14 +43,15 @@
         android:fontFamily="@font/heebo_bold"
         android:gravity="center"
         android:text="1/2 Juz"
+        android:visibility="invisible"
         android:textColor="#92D5B8"
         android:textSize="10sp"
-        android:visibility="invisible"
         android:layout_alignParentRight="true"
         android:layout_marginRight="8dp" />
 
     <TextView
         android:id="@+id/tvNext"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="6dp"
@@ -61,7 +64,6 @@
         android:text="Berikutnya"
         android:textColor="#92D5B8"
         android:textSize="18sp"
-        android:visibility="invisible"
         />
 
     <TextView
@@ -89,7 +91,7 @@
         android:paddingTop="4dp"
         android:paddingEnd="16dp"
         android:paddingBottom="4dp"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         tools:text="AyatText" />
 
@@ -103,8 +105,8 @@
         android:paddingBottom="16dp"
         tools:text="Translation"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
         android:layout_below="@id/tvQuran"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

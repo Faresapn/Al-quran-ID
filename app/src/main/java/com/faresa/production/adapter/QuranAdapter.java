@@ -130,7 +130,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.QuranViewHol
             quranViewHolder.tvTranslation.setVisibility(View.GONE);
             quranViewHolder.tvAyat.setVisibility(View.GONE);
             quranViewHolder.tvAyat.setBackground(null);
-            quranViewHolder.ivItem.setVisibility(View.GONE);
+            quranViewHolder.ivItem.setVisibility(View.INVISIBLE);
             quranViewHolder.itemView.setOnClickListener(null);
         } else {
             quranViewHolder.tvSubTitle.setVisibility(View.GONE);
@@ -141,8 +141,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.QuranViewHol
             quranViewHolder.tvQuran.setTextSize(TypedValue.COMPLEX_UNIT_SP, arabTextSize);
             quranViewHolder.tvTranslation.setText(quranModel.getTranslation());
             quranViewHolder.tvTranslation.setTextSize(TypedValue.COMPLEX_UNIT_SP, translationTextSize);
-            quranViewHolder.tvAyat.setBackgroundResource(R.drawable.quran_num);
-            quranViewHolder.ivItem.setVisibility(View.VISIBLE);
+            quranViewHolder.tvAyat.setBackgroundResource(R.drawable.background_nomor);
+            quranViewHolder.ivItem.setVisibility(View.INVISIBLE);
             if (preference.getLastRead() == (int) getItemId(i)) {
                 quranViewHolder.tvAyat.setText(R.string.star);
             } else {

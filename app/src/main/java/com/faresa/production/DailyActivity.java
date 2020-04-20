@@ -1,9 +1,12 @@
 package com.faresa.production;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 
 import com.faresa.production.preference.AppPreference;
 import com.faresa.production.receiver.AlarmReceiver;
+import com.google.android.gms.ads.AdRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,7 +48,19 @@ public class DailyActivity extends AppCompatActivity {
         }
 
         tvTarget.setText(preference.getDaily().toUpperCase() + "/HARI");
+        Toolbar toolbar = findViewById(R.id.tolbar);
+        toolbar.setNavigationIcon(R.drawable.back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
+
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

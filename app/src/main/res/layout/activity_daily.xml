@@ -4,122 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_daily"
+    android:background="#fff"
     tools:context=".DailyActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/textbox"
-        app:layout_constraintBottom_toTopOf="@+id/tvTarget"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="@font/heebo_bold"
-        android:text="@string/daily_desc"
-        android:textAlignment="center"
-        android:textColor="#A0DFBF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/tvTarget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/heebo_bold"
-        android:textColor="#155354"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:titleTextColor="@android:color/white"
+        app:title="Target Harian"
+        app:navigationIcon="@drawable/back"
+        android:background="@drawable/background_item_bacaan"
+        app:layout_constraintBottom_toTopOf="@+id/tvNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/heebo_bold"
         android:text="Pilih target harian"
-        android:textColor="#155354"
+        android:textColor="#89C8C7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTarget" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <Button
-        android:id="@+id/btnHalfJuz"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Setengah Juz/hari"
-        android:textAllCaps="false"
-        android:textColor="#A0DFBF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-    <Button
-        android:id="@+id/btnSurahDaily"
-        android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnJuzDaily"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="170dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_buton"
+                android:fontFamily="@font/heebo_bold"
+                android:text="Satu Juz/hari"
+                android:textSize="18dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnSurahDaily"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="170dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_buton"
+                android:textSize="18dp"
+                android:fontFamily="@font/heebo_bold"
+                android:text="Satu Surah/hari"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnHalfJuz"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_buton"
+                android:fontFamily="@font/heebo_bold"
+                android:layout_weight="1"
+                android:text="Separuh Juz/hari"
+                android:textSize="18dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnnonaktif"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_buton"
+                android:fontFamily="@font/heebo_bold"
+                android:text="Nonaktif Target"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Satu Surah/hari"
-        android:textAllCaps="false"
-        android:textColor="#A0DFBF"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="#89C8C7"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHalfJuz" />
+        app:layout_constraintTop_toBottomOf="@+id/tolbar">
 
-    <Button
-        android:id="@+id/btnJuzDaily"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Satu Juz/hari"
-        android:textAllCaps="false"
-        android:textColor="#A0DFBF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSurahDaily" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#89C8C7"
+            android:orientation="horizontal">
 
-
-
-    <Button
-        android:id="@+id/btnnonaktif"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_button"
-        android:fontFamily="@font/heebo_bold"
-        android:text="Nonaktif Target"
-        android:textAllCaps="false"
-        android:textColor="#A0DFBF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnJuzDaily" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:text="Untuk mendapatkan notifikasi target bacaan harian setiap memasuki waktu sholat, pilih target bacaan harian yang Anda inginkan di bawah ini."
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

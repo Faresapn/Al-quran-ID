@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:background="#3B3D3C"
         android:gravity="center"
-        android:visibility="gone"
+
         android:padding="10dp"
         android:text="Putar Seperti Angka 8 untuk mendapatkan akurasi yang tepat"
         android:textAlignment="center"

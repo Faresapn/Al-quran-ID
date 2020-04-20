@@ -8,8 +8,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!-- Required by AdColony -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Optional, but Recommended by AdColony -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".application.MyApplication"
@@ -19,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MurottalActivity"></activity>
         <activity android:name=".kompas.Kompas" />
@@ -57,6 +65,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".DailyActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AdzanActivity"
@@ -83,6 +92,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.adcolony.sdk.AdColonyInterstitialActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true"/>
+
+        <activity
+            android:name="com.adcolony.sdk.AdColonyAdViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true"/>
     </application>
 
 </manifest>

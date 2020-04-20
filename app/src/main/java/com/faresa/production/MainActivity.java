@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity{
         dailyReset();
     }
 
-    @OnClick({R.id.btnQuran, R.id.btnLastRead, R.id.btnAdzan, R.id.btnDaily, R.id.btnSetting})
+    @OnClick({R.id.btnQuran, R.id.btnLastRead, R.id.btnAdzan, R.id.btnDaily, R.id.btnSetting,R.id.btnKami})
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
@@ -101,6 +101,11 @@ public class MainActivity extends AppCompatActivity{
                 intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btnKami:
+                intent = new Intent(this, AboutUsActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 

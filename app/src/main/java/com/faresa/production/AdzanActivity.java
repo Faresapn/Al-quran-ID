@@ -37,7 +37,7 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class AdzanActivity extends AppCompatActivity {
+public class    AdzanActivity extends AppCompatActivity {
     @BindView(R.id.tvLocation)
     TextView tvLocation;
     @BindView(R.id.tvDate)
@@ -187,6 +187,7 @@ public class AdzanActivity extends AppCompatActivity {
         tvAshar.setText(adzanModel.getAshar());
         tvMaghrib.setText(adzanModel.getMaghrib());
         tvIsya.setText(adzanModel.getIsya());
+        Log.d("test",String.valueOf(adzanModel.getImsak()));
     }
 
     //masih testing

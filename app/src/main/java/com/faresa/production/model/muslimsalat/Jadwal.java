@@ -19,6 +19,10 @@ public class Jadwal {
 
     @SerializedName("maghrib")
     private String maghrib;
+    @SerializedName("imsak")
+    private String imsak;
+
+
 
     @SerializedName("isha")
     private String isya;
@@ -77,5 +81,13 @@ public class Jadwal {
 
     public void setIsya(String isya) {
         this.isya = isya;
+    }
+
+    public String getImsak() {
+        return imsak;
+    }
+
+    public void setImsak(String imsak) {
+        this.imsak = imsak;
     }
 }

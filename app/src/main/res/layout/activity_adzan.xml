@@ -235,7 +235,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:adSize="BANNER"
+        app:adSize="SMART_BANNER"
         app:adUnitId="@string/banner_id"/>
 
     <Button

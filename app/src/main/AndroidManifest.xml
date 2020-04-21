@@ -7,16 +7,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-
-    <!-- Required by AdColony -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Required by AdColony -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- Optional, but Recommended by AdColony -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Optional, but Recommended by AdColony -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".application.MyApplication"
@@ -28,7 +23,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MurottalActivity"></activity>
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".MurottalActivity" />
         <activity android:name=".kompas.Kompas" />
 
         <meta-data
@@ -65,8 +61,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".DailyActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".AdzanActivity"
             android:screenOrientation="portrait"
@@ -95,12 +91,11 @@
         <activity
             android:name="com.adcolony.sdk.AdColonyInterstitialActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true"/>
-
+            android:hardwareAccelerated="true" />
         <activity
             android:name="com.adcolony.sdk.AdColonyAdViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true"/>
+            android:hardwareAccelerated="true" />
     </application>
 
 </manifest>

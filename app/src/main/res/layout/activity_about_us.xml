@@ -95,51 +95,59 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#F1F1F1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.17">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_profile"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/new_logo" />
+            android:src="@drawable/bagas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8sp"
-            android:layout_toLeftOf="@+id/img_profile"
-            android:layout_toEndOf="@+id/img_profile"
             android:fontFamily="@font/lpmq_isepmisbah"
-            android:text="@string/lorem_ipsum"
-            android:textSize="24sp" />
+            android:text="Makhali Bagas"
+            android:textSize="24sp"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile"
+            app:layout_constraintStart_toEndOf="@+id/img_profile"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView16"
-            android:layout_marginTop="0dp"
-            android:layout_toLeftOf="@+id/img_profile"
-            android:layout_toEndOf="@id/img_profile"
-            android:text="@string/domet" />
-    </RelativeLayout>
+            android:layout_marginStart="8dp"
+            android:text="Android Developer"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile"
+            app:layout_constraintStart_toEndOf="@id/img_profile"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#F1F1F1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
@@ -147,34 +155,43 @@
             android:id="@+id/img_profile2"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/new_logo" />
+            android:src="@drawable/faresa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8sp"
-            android:layout_toLeftOf="@+id/img_profile2"
-            android:layout_toEndOf="@+id/img_profile2"
             android:fontFamily="@font/lpmq_isepmisbah"
-            android:text="@string/lorem_ipsum"
-            android:textSize="24sp" />
+            android:text="Faresa Prasetyo N"
+            android:textSize="24sp"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile2"
+            app:layout_constraintStart_toEndOf="@+id/img_profile2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView17"
-            android:layout_marginTop="0dp"
-            android:layout_toLeftOf="@+id/img_profile2"
-            android:layout_toEndOf="@id/img_profile2"
-            android:text="@string/domet" />
-    </RelativeLayout>
+            android:layout_marginStart="8dp"
+            android:text="Android Developer"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile2"
+            app:layout_constraintStart_toEndOf="@id/img_profile2"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#F1F1F1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
@@ -182,28 +199,32 @@
             android:id="@+id/img_profile3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/new_logo" />
+            android:src="@drawable/sisil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8sp"
-            android:layout_toLeftOf="@+id/img_profile3"
-            android:layout_toEndOf="@+id/img_profile3"
             android:fontFamily="@font/lpmq_isepmisbah"
-            android:text="@string/lorem_ipsum"
-            android:textSize="24sp" />
+            android:text="Silvinia Nur Aisyah"
+            android:textSize="24sp"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile3"
+            app:layout_constraintStart_toEndOf="@+id/img_profile3"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView20"
-            android:layout_marginTop="0dp"
-            android:layout_toLeftOf="@+id/img_profile3"
-            android:layout_toEndOf="@id/img_profile3"
-            android:text="@string/domet" />
-    </RelativeLayout>
+            android:layout_marginStart="8dp"
+            android:text="UI/UX Desainer"
+            app:layout_constraintRight_toLeftOf="@+id/img_profile3"
+            app:layout_constraintStart_toEndOf="@id/img_profile3"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

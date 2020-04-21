@@ -9,7 +9,7 @@ android {
         versionCode 1
         versionName "1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "MUSLIM_API_KEY", '"f1bc22b4ec610120080f8eceefa488d1"')
+        buildConfigField("String", "MUSLIM_API_KEY", '"e7b4bbb04e48cea134b56ff481979ba1"')
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {

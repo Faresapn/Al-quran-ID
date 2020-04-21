@@ -146,6 +146,7 @@ public class    AdzanActivity extends AppCompatActivity {
                             Jadwal adzanModel = response.body().getItems().get(0);
                             adzanHelper.insertAdzanData(adzanModel);
                             setData(adzanModel);
+                            Log.d("jadwal", String.valueOf(adzanModel));
 
                             AlarmReceiver receiver = new AlarmReceiver();
                             try {
@@ -179,6 +180,7 @@ public class    AdzanActivity extends AppCompatActivity {
         Log.d("mydatee",currentDate);
         String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         Log.d("mydate",mydate);
+        Log.d("jadwal", String.valueOf(adzanModel));
         tvDate.setText(datetime);
         tvLocation.setText(appPreference.getCity());
 

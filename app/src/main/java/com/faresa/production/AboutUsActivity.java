@@ -16,6 +16,10 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
 
         initListener();
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
     }
 
     public void initListener(){

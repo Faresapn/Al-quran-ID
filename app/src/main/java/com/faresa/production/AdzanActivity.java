@@ -25,12 +25,14 @@ import com.faresa.production.receiver.AlarmReceiver;
 import com.faresa.production.rest.ServiceGenerator;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,12 +52,11 @@ public class    AdzanActivity extends AppCompatActivity {
     TextView tvDzuhur;
     @BindView(R.id.tv_ashar)
     TextView tvAshar;
-    @BindView(R.id.tv_magrhib)
+    @BindView(R.id.tv_magrib)
     TextView tvMaghrib;
     @BindView(R.id.tv_isya)
     TextView tvIsya;
-    @BindView(R.id.avBanner)
-    AdView avBanner;
+
 
     AppPreference appPreference;
     CityAdapter cityAdapter;
@@ -68,8 +69,11 @@ public class    AdzanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adzan);
         ButterKnife.bind(this);
-        on = findViewById(R.id.button2);
+        on = findViewById(R.id.floatingActionButton);
 
+        if (getSupportActionBar() != null){
+            Objects.requireNonNull(getSupportActionBar()).hide();
+        }
         on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,10 +108,10 @@ public class    AdzanActivity extends AppCompatActivity {
             String city = cityAdapter.getItem(position);
             appPreference.setCity(city);
             actvCity.setText("");
+            tvLocation.setText(appPreference.getCity());
             reloadData();
         });
         loadData();
-        showBannerAd();
     }
 
     @Override
@@ -129,10 +133,10 @@ public class    AdzanActivity extends AppCompatActivity {
     private void reloadData() {
         String city = appPreference.getCityId();
         String cityName = appPreference.getCity();
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String currentDate = new SimpleDateFormat("dd-MM", Locale.getDefault()).format(new Date());
 
         Date date = Calendar.getInstance().getTime();
-        SimpleDateFormat format = new SimpleDateFormat("YYYY-mm-dd");
+        SimpleDateFormat format = new SimpleDateFormat("mm-dd");
         String formattedDate = format.format(date);
 
 
@@ -182,7 +186,6 @@ public class    AdzanActivity extends AppCompatActivity {
         Log.d("mydate",mydate);
         Log.d("jadwal", String.valueOf(adzanModel));
         tvDate.setText(datetime);
-        tvLocation.setText(appPreference.getCity());
 
         tvSubuh.setText(adzanModel.getSubuh());
         tvDzuhur.setText(adzanModel.getDzuhur());
@@ -192,11 +195,4 @@ public class    AdzanActivity extends AppCompatActivity {
         Log.d("test",String.valueOf(adzanModel.getImsak()));
     }
 
-    //masih testing
-    private void showBannerAd() {
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        avBanner.loadAd(adRequest);
-
-    }
 }

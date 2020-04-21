@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#89C8C7</color>
     <color name="colorPrimaryDark">#166B6D</color>
-    <color name="colorAccent">#A0DFBF</color>
+    <color name="colorAccent">#89C8C7</color>
 
     <color name="fastscroll_handle">@color/colorPrimaryDark</color>
     <color name="bg_murottal">#89C8C7</color>

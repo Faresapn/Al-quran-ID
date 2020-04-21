@@ -2,7 +2,7 @@
 ![Home](demo/home.png)
 ![Home](demo/jadwal.png)
 
-[![Get it in the Play Store](https://ibb.co/4WmrkLB)](https://play.google.com/store/apps/details?id=com.faresa.alquran)
+[![Get it in the Play Store](https://i.ibb.co/mJDWpKQ/en-badge-web-generic.png)](https://play.google.com/store/apps/details?id=com.faresa.alquran)
 
 Semua Fitur Gratis Tanpa Pembatasan
 Aplikasi Al Quran digital dengan terjemahan Bahasa Indonesia full, 114 surah atau 30 juz tanpa pembatasan. Dapat dibaca offline serta tampilan antar muka yang user friendly.

@@ -1,2 +1,2 @@
-# Al-quran
-Private doeloe
+# Al-quran ID
+![Home](demo/home.png)(demo/jadwal.png)

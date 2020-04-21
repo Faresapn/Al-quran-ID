@@ -26,5 +26,5 @@ Fitur-fitur:
 - Download Murotal Offline
 - Sunah Dalam Islam
 
-*NB: Jika ingin bedonasi terhadap aplikasi ini bisa hubungi kami*
+*NB: Jika ingin berdonasi terhadap aplikasi ini bisa hubungi kami , Kami juga siap menerima project pembuatan aplikasi berbasis android*
 

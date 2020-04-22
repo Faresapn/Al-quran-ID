@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AL-Quran ID</string>
-
+    <string name="share">Ayo Download Aplikasi Al-Quran ID kami dan jangan lupa share ke yang lain juga</string>
+    <string name="share_link">https://play.google.com/store/apps/details?id=com.faresa.alquran</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="star">\u2605</string>
     <string name="daily_desc">Untuk mendapatkan notifikasi\ntarget bacaan harian\nsetiap memasuki waktu sholat,\npilih target bacaan harian\nyang Anda inginkan di bawah ini</string>

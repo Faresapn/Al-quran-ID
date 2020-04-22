@@ -16,12 +16,7 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         satu = findViewById(R.id.relativeLayout);
-        satu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/makhalibagas/")));
-            }
-        });
+        satu.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/makhalibagas/"))));
         dua = findViewById(R.id.relativeLayout2);
         dua.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +42,17 @@ public class AboutUsActivity extends AppCompatActivity {
         Button button_share = findViewById(R.id.button_share);
         Button button_rating = findViewById(R.id.button_rating);
 
-        button_rating.setOnClickListener(v -> startActivity(new Intent(String.valueOf(getApplicationContext()), Uri.parse("https://play.google.com/store/apps/details?id=com.faresa.alquran"))));
+        button_rating.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(
+                getString(R.string.share_link)))));
 
         button_share.setOnClickListener(v -> {
-            Intent share = new Intent();
-            share.setAction(Intent.ACTION_SEND);
-            share.putExtra(Intent.EXTRA_SUBJECT,"Aplikasi Al-Quran");
-            share.putExtra(Intent.EXTRA_TEXT,"https://play.google.com/store/apps/details?id=com.faresa.alquran");
-            startActivity(share);
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+            String sAux = getString(R.string.share) + "\n";
+            sAux = sAux + getString(R.string.share_link) + "\n";
+            i.putExtra(Intent.EXTRA_TEXT, sAux);
+            startActivity(Intent.createChooser(i, "choose one"));
         });
     }
 }

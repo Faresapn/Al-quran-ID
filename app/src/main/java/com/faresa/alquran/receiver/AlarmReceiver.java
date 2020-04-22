@@ -119,7 +119,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setWhen(System.currentTimeMillis())
-                    .setSmallIcon(R.mipmap.ic_launcher_round)
+                    .setSmallIcon(R.mipmap.ic_launcher_new_round)
                     .setContentTitle("Terakhir dibaca: Q.S. " + surah + ": " + verse)
                     .setSound(sound)
                     .setContentText(preference.getDailyMessage())

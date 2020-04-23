@@ -9,8 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class AboutUsActivity extends AppCompatActivity {
     ConstraintLayout satu,dua,tiga;
+    private InterstitialAd interstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +36,22 @@ public class AboutUsActivity extends AppCompatActivity {
             }
         });
         initListener();
-
+        loadInterstitialAd();
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
+        }
+    }
+
+    private void loadInterstitialAd() {
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_id));
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
         }
     }
 
@@ -42,8 +59,7 @@ public class AboutUsActivity extends AppCompatActivity {
         Button button_share = findViewById(R.id.button_share);
         Button button_rating = findViewById(R.id.button_rating);
 
-        button_rating.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(
-                getString(R.string.share_link)))));
+        button_rating.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.share_link)))));
 
         button_share.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_SEND);

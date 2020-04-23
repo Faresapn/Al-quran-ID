@@ -7,7 +7,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 2
-        versionName "1.3"
+        versionName "1.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "MUSLIM_API_KEY", '"e7b4bbb04e48cea134b56ff481979ba1"')
         vectorDrawables.useSupportLibrary = true

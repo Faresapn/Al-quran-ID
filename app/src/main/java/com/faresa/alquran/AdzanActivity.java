@@ -23,6 +23,8 @@ import com.faresa.alquran.model.muslimsalat.ResponseAdzan;
 import com.faresa.alquran.preference.AppPreference;
 import com.faresa.alquran.receiver.AlarmReceiver;
 import com.faresa.alquran.rest.ServiceGenerator;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -61,12 +63,14 @@ public class    AdzanActivity extends AppCompatActivity {
     AdzanHelper adzanHelper;
     int position ;
     Button on,off;
+    AdView avBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adzan);
         ButterKnife.bind(this);
         on = findViewById(R.id.floatingActionButton);
+        avBanner = findViewById(R.id.avBanner);
 
         if (getSupportActionBar() != null){
             Objects.requireNonNull(getSupportActionBar()).hide();
@@ -109,6 +113,13 @@ public class    AdzanActivity extends AppCompatActivity {
             reloadData();
         });
         loadData();
+        showBannerAd();
+    }
+
+    private void showBannerAd() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        avBanner.loadAd(adRequest);
     }
 
     @Override

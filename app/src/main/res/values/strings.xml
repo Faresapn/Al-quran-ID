@@ -9,9 +9,9 @@
     <string name="key_translation_font_size">translation font size key</string>
     <string name="title_activity_settings">Settings</string>
 
-    <string name="app_id">ca-app-pub-1998515773839190~3351977259</string>
-    <string name="banner_id">ca-app-pub-1998515773839190/5734598013</string>
-    <string name="interstitial_id">ca-app-pub-1998515773839190/9482271337</string>
+    <string name="app_id">ca-app-pub-1998515773839190~5216034321</string>
+    <string name="banner_id">ca-app-pub-1998515773839190/8910255801</string>
+    <string name="interstitial_id">ca-app-pub-1998515773839190/3179309176</string>
 
     <string name="test_banner_id">ca-app-pub-1998515773839190/5734598013</string>
     <string name="test_interstitial_id">ca-app-pub-1998515773839190/9482271337</string>
@@ -33,7 +33,7 @@
     <string name="degree_from_north">dari indonesia</string>
     <string name="using_last_location">Menggunakan posisi terakhir anda</string>
     <string name="al_quran">Al-Quran ID</string>
-    <string name="versi">Version 1.1</string>
+    <string name="versi">Version 1.4</string>
     <string name="rating_kami">Rating Kami</string>
     <string name="share_app">Share App</string>
     <string name="lorem_ipsum">Lorem Ipsum</string>

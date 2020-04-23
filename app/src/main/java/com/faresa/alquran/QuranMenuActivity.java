@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class QuranMenuActivity extends AppCompatActivity {
+    private InterstitialAd interstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +28,15 @@ public class QuranMenuActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Al-Qur'an");
             getSupportActionBar().setElevation(0);
         }
+        loadInterstitialAd();
     }
+
+    private void loadInterstitialAd() {
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_id));
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -51,5 +63,12 @@ public class QuranMenuActivity extends AppCompatActivity {
                 break;
         }
         startActivity(intent);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (interstitialAd.isLoaded()) {
+            interstitialAd.show();
+        }
     }
 }

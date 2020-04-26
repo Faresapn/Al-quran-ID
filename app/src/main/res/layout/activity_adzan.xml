@@ -49,6 +49,17 @@
         tools:ignore="RtlSymmetry"
         tools:text="Jakarta" />
 
+    <Button
+        android:id="@+id/floatingActionButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_settings"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actvCity" />
+
     <AutoCompleteTextView
         android:id="@+id/actvCity"
         android:layout_width="300dp"
@@ -84,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/avBanner"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout">
 
         <androidx.cardview.widget.CardView
@@ -256,20 +268,6 @@
             </FrameLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/floatingActionButton"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/ic_settings"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actvCity"
-        app:layout_constraintVertical_bias="0.65" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/avBanner"

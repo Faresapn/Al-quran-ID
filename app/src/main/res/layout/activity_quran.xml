@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:handleColor="@color/fastscroll_handle"
-        app:layout_constraintBottom_toBottomOf="@+id/avBanner"
+        app:layout_constraintBottom_toTopOf="@+id/avBanner"
         app:layout_constraintTop_toBottomOf="@+id/tolbar"
         tools:listitem="@layout/item_quran" />
 

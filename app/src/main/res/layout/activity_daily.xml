@@ -101,7 +101,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_buton"
                 android:fontFamily="@font/heebo_bold"
-                android:text="Separuh Juz/hari"
+                android:text="1/2 Juz/hari"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18dp" />

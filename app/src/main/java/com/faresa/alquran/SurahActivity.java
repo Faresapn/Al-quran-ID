@@ -84,7 +84,7 @@ public class SurahActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void initDataByWord(String word) {
+    private void    initDataByWord(String word) {
         if (word.length() == 0) {
             surahAdapter.setSurahData(quranHelper.getAllSurah());
         } else {

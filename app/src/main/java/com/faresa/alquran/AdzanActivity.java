@@ -18,10 +18,13 @@ import android.widget.Toast;
 import com.faresa.alquran.adapter.CityAdapter;
 import com.faresa.alquran.db.AdzanHelper;
 import com.faresa.alquran.db.CityHelper;
+import com.faresa.alquran.model.Sholat.ResponseData;
 import com.faresa.alquran.model.muslimsalat.Jadwal;
 import com.faresa.alquran.model.muslimsalat.ResponseAdzan;
 import com.faresa.alquran.preference.AppPreference;
 import com.faresa.alquran.receiver.AlarmReceiver;
+import com.faresa.alquran.rest.ApiService;
+import com.faresa.alquran.rest.RetrofitConfiguration;
 import com.faresa.alquran.rest.ServiceGenerator;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -37,6 +40,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 
 public class    AdzanActivity extends AppCompatActivity {
     @BindView(R.id.tvLocation)
@@ -47,6 +51,8 @@ public class    AdzanActivity extends AppCompatActivity {
     AutoCompleteTextView actvCity;
     @BindView(R.id.tv_subuh)
     TextView tvSubuh;
+    @BindView(R.id.tv_imsak)
+    TextView tvImsak;
     @BindView(R.id.tv_dzuhur)
     TextView tvDzuhur;
     @BindView(R.id.tv_ashar)
@@ -134,7 +140,7 @@ public class    AdzanActivity extends AppCompatActivity {
     private void loadData() {
         AdzanHelper adzanHelper = new AdzanHelper(this);
         Jadwal adzanModel = adzanHelper.getAllAdzanData();
-        setData(adzanModel);
+        //setData(adzanModel);
     }
 
     @SuppressLint("SimpleDateFormat")
@@ -146,9 +152,38 @@ public class    AdzanActivity extends AppCompatActivity {
         Date date = Calendar.getInstance().getTime();
         SimpleDateFormat format = new SimpleDateFormat("mm-dd");
         String formattedDate = format.format(date);
+        String currentDatee = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateformat = new SimpleDateFormat("hh:mm aa \nEE, dd-MMM-yyyy  ");
+        String datetime = dateformat.format(c.getTime());
+        ApiService apiService = RetrofitConfiguration.getRetrofitSholat().create(ApiService.class);
+        Call<ResponseData> call = apiService.getDataTimePray(cityName,"indonesia");
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                AlarmReceiver receiver = new AlarmReceiver();
+                try {
+                    receiver.registerNotification(getApplicationContext());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
+                if (response.body() != null){
+                    tvSubuh.setText(response.body().getData().getTimings().getFajr());
+                    tvDzuhur.setText(response.body().getData().getTimings().getDhuhr());
+                    tvAshar.setText(response.body().getData().getTimings().getAsr());
+                    tvMaghrib.setText(response.body().getData().getTimings().getMaghrib());
+                    tvIsya.setText(response.body().getData().getTimings().getIsha());
+                    tvImsak.setText(response.body().getData().getTimings().getImsak());
+                }
+            }
 
-        ServiceGenerator.getApi(false).getJadwalShalat(cityName)
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+
+            }
+        });
+        /*ServiceGenerator.getApi(false).getJadwalShalat(cityName)
                 .enqueue(new Callback<ResponseAdzan>() {
                     @Override
                     public void onResponse(Call<ResponseAdzan> call, retrofit2.Response<ResponseAdzan> response) {
@@ -200,7 +235,8 @@ public class    AdzanActivity extends AppCompatActivity {
         tvAshar.setText(adzanModel.getAshar());
         tvMaghrib.setText(adzanModel.getMaghrib());
         tvIsya.setText(adzanModel.getIsya());
-        Log.d("test",String.valueOf(adzanModel.getImsak()));
+        tvImsak.setText(adzanModel.getImsak());
+        Log.d("test",String.valueOf(adzanModel.getImsak()));*/
     }
 
 }

@@ -48,6 +48,17 @@
             android:textAllCaps="false"
             android:textColor="@color/bg_murottal"
             android:textSize="18sp"/>
+        <Button
+            android:id="@+id/btnAsmaul"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button"
+            android:fontFamily="@font/heebo_bold"
+            android:text="Asmaul Huzna"
+            android:textAllCaps="false"
+            android:textColor="@color/bg_murottal"
+            android:textSize="18sp"/>
 
     </LinearLayout>
 

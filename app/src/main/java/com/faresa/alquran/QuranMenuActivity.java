@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.faresa.alquran.adapter.AsmaulHuznaAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
@@ -48,7 +49,7 @@ public class QuranMenuActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick({R.id.btnJuz, R.id.btnSurah,R.id.btnMurottal})
+    @OnClick({R.id.btnJuz, R.id.btnSurah,R.id.btnMurottal,R.id.btnAsmaul})
     public void onMenuClick(View v) {
         Intent intent = null;
         switch (v.getId()) {
@@ -60,6 +61,9 @@ public class QuranMenuActivity extends AppCompatActivity {
                 break;
             case R.id.btnMurottal:
                 intent = new Intent(this,MurottalActivity.class);
+                break;
+            case R.id.btnAsmaul:
+                intent = new Intent(this, AsmaulHuznaActivity.class);
                 break;
         }
         startActivity(intent);

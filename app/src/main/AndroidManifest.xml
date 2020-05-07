@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name="com.faresa.alquran.application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_new"
         android:label="@string/app_name"
@@ -23,9 +23,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.faresa.alquran.AboutUsActivity"></activity>
-        <activity android:name="com.faresa.alquran.MurottalActivity" />
-        <activity android:name="com.faresa.alquran.kompas.Kompas" />
+        <activity android:name=".AsmaulHuznaActivity"></activity>
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".MurottalActivity" />
+        <activity android:name=".kompas.Kompas" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -37,7 +38,7 @@
             android:theme="@android:style/Theme.Translucent" />
 
         <receiver
-            android:name="com.faresa.alquran.receiver.BootReceiver"
+            android:name=".receiver.BootReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -45,41 +46,41 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.faresa.alquran.receiver.AlarmReceiver"
+            android:name=".receiver.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name="com.faresa.alquran.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.alquran.QuranMenuActivity"
+            android:name=".QuranMenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.alquran.JuzActivity"
+            android:name=".JuzActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.alquran.DailyActivity"
+            android:name=".DailyActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.faresa.alquran.AdzanActivity"
+            android:name=".AdzanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.faresa.alquran.QuranActivity"
+            android:name=".QuranActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.faresa.alquran.SurahActivity"
+            android:name=".SurahActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.faresa.alquran.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name="com.faresa.alquran.PreloadActivity"
+            android:name=".PreloadActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>

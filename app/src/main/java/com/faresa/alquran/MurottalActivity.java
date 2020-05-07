@@ -11,7 +11,7 @@ import android.os.Bundle;
 import com.faresa.alquran.adapter.MurottalAdapter;
 import com.faresa.alquran.model.QuranMurottal;
 import com.faresa.alquran.rest.ApiService;
-import com.faresa.alquran.rest.MurottalClient;
+import com.faresa.alquran.rest.RetrofitConfiguration;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class MurottalActivity extends AppCompatActivity {
     }
 
     public void getDataMurottal(){
-        ApiService apiService = MurottalClient.getRetrofit().create(ApiService.class);
+        ApiService apiService = RetrofitConfiguration.getRetrofit().create(ApiService.class);
         Call<List<QuranMurottal>> call = apiService.getDataQuran();
 
         call.enqueue(new Callback<List<QuranMurottal>>() {
